@@ -1,0 +1,13 @@
+//LeetCode-169  --> Majority Element
+//Idea is whenever an element appears more than n/2(n being array length) times in an array then it always available in the n/2 th position.
+
+
+class Solution 
+{
+    public int majorityElement(int[] nums) {
+        Arrays.sort();
+        int p=nums.length/2;
+        return nums[p];
+        
+    }
+}
