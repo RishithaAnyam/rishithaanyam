@@ -1,5 +1,6 @@
 //LeetCode-136 --> Single Number
-
+//First sort the elements of the array then traverse through the array starting from zeroth index check for ith element and i+1th element if both are different return that element 
+//if no such elemnt exusts return the last element in the array 
 
 class Solution
 {
