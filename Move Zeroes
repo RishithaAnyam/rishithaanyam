@@ -1,0 +1,30 @@
+/*Leetcode-283 -->Move Zeroes
+The Intuition is we first check the length if the length is 1 we return the element
+else we initialize p as 0, we traverse through the array and if we encounter any non zero elements we do nums[p]=nums[i]
+after completing this loop we write a while loop to check if the p<nums.length ,and if it is true we add the 0 to the rest of te indices
+*/
+
+
+class Solution {
+    public void moveZeroes(int[] nums) {
+        
+        if(nums.length==1)
+        {
+            return;
+        }
+        int p=0;
+        for(int i=0;i<nums.length;i++)
+        {
+            if(nums[i]!=0)
+            {
+                nums[p]=nums[i];
+                p++;
+            }
+        }
+        while(p<nums.length)
+        {
+            nums[p]=0;
+            p++;
+        }
+    }
+}
