@@ -1,0 +1,26 @@
+LeetCode-448  -->Find All Numbers Disappeared
+
+Explanation --> In this approach, we will add all the elments into a hash set then we create array list 
+                into which we add the elements that are prsent in hashset but are in the range from 1 to n .
+
+
+class Solution
+{
+    public List<Integer> findDisappearedNumbers(int[] nums) 
+    {
+      HashSet<Integer> hs=new HashSet<>();
+      for(int i:nums)
+      {
+        hs.add(i);
+      }
+      ArrayList<Integer> a=new ArrayList<>();
+      for(int j=1;j<=nums.length;j++)
+      {
+        if(!hs.contains(j))
+         {
+           a.add(j);
+         }
+      }
+   return a;
+}
+}
