@@ -1,0 +1,46 @@
+LeetCode-506 --> Relative Ranks
+
+Explanation --> First we create a copy array c that will have copy of the elemnts in the score array,then we create a String array a that will be used to print output.
+                Then we sort the copy array c ,then we traverse through score array and check the index of that element in c array ,one we find the index if the index is 
+                n-1 we add that as Gold Medal in string array and so on ,finally we check for the last indexed elemnts by traverssing through c array 
+                if we find element we try to add it as (n-j).
+
+class Solution {
+    public String[] findRelativeRanks(int[] score) {
+        int n=score.length;
+        String[] a=new String[score.length];
+        int[] c=new int[score.length];
+        for(int i=0;i<score.length;i++)
+        {
+            c[i]=score[i];
+        }
+        Arrays.sort(c);
+        for(int i=0;i<score.length;i++)
+        {
+              if(score[i]==c[n-1])
+              {
+                  a[i]="Gold Medal";
+              }
+                else if(score[i]==c[n-2])
+                {
+                    a[i]="Silver Medal";
+                }
+                else if(score[i]==c[n-3])
+                {
+                    a[i]="Bronze Medal";
+                }
+                else
+                {
+                    for(int j=0;j<n;j++)
+                    {
+                        if(score[i]==c[j])
+                        {
+                            a[i]=(n-j)+"";
+                        }
+                    }
+                }
+            }
+            return a;
+        }
+        
+    }
