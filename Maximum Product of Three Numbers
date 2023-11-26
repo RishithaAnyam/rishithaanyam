@@ -1,0 +1,15 @@
+LeetCode-628 -->Maximum Product of Three Numbers
+
+Explanation --> If all the array elements are positive we return product of last three elemnts after sorting ,if all the elements are negative we return the first three elements 
+                if we have mix of both positive and negative numbers then we should return first two numbers in the array bcoz they will be product of two negative and last number in array.
+
+class Solution {
+    public int maximumProduct(int[] nums) {
+        Arrays.sort(nums);
+        int c1=nums[0]*nums[1]*nums[nums.length-1];
+        int c2=nums[nums.length-1]*nums[nums.length-2]*nums[nums.length-3];
+        int ans=Math.max(c1,c2);
+        return ans;
+        
+    }
+}
