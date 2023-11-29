@@ -1,0 +1,30 @@
+LeetCode-13 --> Roman to Integer
+
+Explanation -->First create a hashmap then we add all the characters with the elements then we get the value of the character if that value is less than the i+1th index value 
+               then we subract it from ans else we add it to ans
+
+class Solution {
+    public int romanToInt(String s) {
+        HashMap<Character,Integer> hp=new HashMap<>();
+        hp.put('I',1);
+        hp.put('V',5);
+        hp.put('X',10);
+        hp.put('L',50);
+        hp.put('C',100);
+        hp.put('D',500);
+        hp.put('M',1000);
+        int ans=0;
+        for(int i=0;i<s.length();i++)
+        {
+            if(i<s.length()-1 && hp.get(s.charAt(i))<hp.get(s.charAt(i+1)))
+            {
+                ans-=hp.get(s.charAt(i));
+            }
+            else
+            {
+                ans+=hp.get(s.charAt(i));
+            }
+        }
+        return ans;
+    }
+}
