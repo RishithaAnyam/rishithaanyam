@@ -1,0 +1,19 @@
+LeetCode-191 --> Numer of 1 Bits
+
+Explanation --> First we convert the given number into String then we convert that into character array and return count of 1's
+
+public class Solution {
+    // you need to treat n as an unsigned value
+    public int hammingWeight(int n) {
+        int c=0;
+        String s=Integer.toBinaryString(n);
+        for(int i:s.toCharArray())
+        {
+            if(i=='1')
+            {
+                c+=1;
+            }
+        }
+        return c;
+    }
+}
