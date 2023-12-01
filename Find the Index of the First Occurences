@@ -1,0 +1,28 @@
+LeetCode -28 -->Find the Index of the First Occurences
+
+Explanation --> First we travese through the needle string and check if the (i+j)th index of haystack string is equal to needle string of jth index
+                if we reach end of string of needle we return the string.
+
+class Solution {
+    public int strStr(String haystack, String needle) {
+        int hlength=haystack.length();
+        int nlength=needle.length();
+        if(hlength<nlength)
+        {
+            return -1;
+        } 
+        for(int i=0;i<=hlength-nlength;i++)
+        {
+            int j=0;
+            while(j<nlength && haystack.charAt(i+j)==needle.charAt(j))
+            {
+                j++;
+            }
+            if(j==nlength)
+            {
+                return i;
+            }
+        }
+        return -1;
+    }
+}
