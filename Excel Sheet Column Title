@@ -1,0 +1,19 @@
+LeetCode - 168 --> Excel Sheet Column Title
+
+Explanation --> Here we simply decrement the column number and find the remainder when it is divided by 6 then add it to 'A',ascii value of 'A'is 65 now the remaindr is added to ascii value.
+                hence that is finally converted into character ,then that character is inserted into stringbuilder object,now divide columnumber with 26.
+
+class Solution {
+    public String convertToTitle(int columnNumber) 
+    {
+        StringBuilder sb=new StringBuilder();
+        while(columnNumber>0)
+        {
+            columnNumber--;
+            char c=((char)('A'+columnNumber%26));
+            sb.insert(0,c);
+            columnNumber/=26;
+        }
+        return sb.toString();
+    }
+}
