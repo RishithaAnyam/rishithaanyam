@@ -1,0 +1,20 @@
+LeetCode -389 --> Find the Difference 
+
+Explanation -->Here we use arraylist approach ,where we create an arraylist and add all the elements of string 't' into it,then we remove the elements that are commonly 
+               present in string 's' and 't' ,then return the leftover elemnt in arraylist.
+
+class Solution {
+    public char findTheDifference(String s, String t) {
+        ArrayList<Character> al=new ArrayList<>();
+        for(int i=0;i<t.length();i++)
+        {
+            al.add(t.charAt(i));
+        }
+        for(int i=0;i<s.length();i++)
+        {
+            al.remove(al.indexOf(s.charAt(i)));
+        }
+         return al.get(0);
+        
+    }
+}
