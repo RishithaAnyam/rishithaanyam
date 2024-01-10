@@ -1,0 +1,21 @@
+leetcode-9 --> Palindrome Number
+
+class Solution {
+    public boolean isPalindrome(int x) {
+        int y=x,rem,res=0;
+        if (x>=0)
+        {
+        while(x!=0)
+        {
+            rem=x%10;
+            x=x/10;
+            res=(res*10)+rem;
+        }
+        if(y==res)
+        {
+return true;
+        }
+        }
+        return false;
+    }
+}
