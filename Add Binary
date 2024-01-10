@@ -1,1 +1,29 @@
+LeetCode -67 -->Add Binary
 
+Explanation  --> We traverse through both strings from right to left ,we do it in a while loop ,we then update carry as carry+char 
+                at i th index(the a.charAt(i) can give its ascii value so we subract it with '0' then the ascii values are subracted
+                and character at that index is obtained) then we append carr%2 to ab and update carry .
+
+class Solution {
+    public String addBinary(String a, String b) 
+    {
+        int i=a.length()-1;
+        int j=b.length()-1;
+        StringBuilder sb=new StringBuilder();
+        int carry=0;
+        while(i>=0|| j>=0|| carry==1)
+        {
+            if(i>=0)
+            {
+                carry+=a.charAt(i--)-'0';
+            }
+             if(j>=0)
+            {
+                carry+=b.charAt(j--)-'0';
+            }
+            sb.append(carry%2);
+            carry/=2;
+        }
+        return sb.reverse().toString();
+    }
+}
