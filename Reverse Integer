@@ -1,0 +1,27 @@
+LeetCode - 7 --> Reverse Integer
+
+Explanation ---> the last digit is obtaied as x%10 and stored in a variable to which 10 is multiplied such that it occupies its position then x is divided by 10 so that
+                next digit can be obtained in the number then we check if the number is less than min value or greater than max value of integer ,return 0 other wise 
+                we return the reversed value
+
+class Solution {
+    public int reverse(int x) {
+        long s=0;
+        while(x!=0)
+        {
+            int p=x%10;
+            s+=p;
+            s=s*10;
+            x=x/10;
+        }
+        s=s/10;
+        if(s>Integer.MAX_VALUE || s<Integer.MIN_VALUE)
+        return 0;
+        if(x<0)
+        {
+            return(int) (-1*s);
+        }
+        return (int)s;
+        }
+        
+    }
