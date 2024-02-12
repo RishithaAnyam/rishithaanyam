@@ -1,0 +1,33 @@
+Leetcode-69 -->Sqrt(x)
+
+Exlanation -->In que we have to find the sqrt of both perfect and non perfect square root of a number,we use binary search approach where
+              we set two values as low=1 and high=n bcoz sqrt will definitely be in the range of 1 to n,then we find mid value if mid*mid>n
+              that means sqrt will not be on the right hence we set high=mid-1 and vicversa with low.
+
+class Solution {
+    public int mySqrt(int x) {
+        long start=1,end=x,ans=0,mid;
+        while(start<=end)
+        {
+            mid=start+(end-start)/2;
+            if(mid*mid==x)
+            {
+                ans=(int)mid;
+                break;
+            }
+            else if(mid*mid>x)
+            {
+                end=mid-1;
+            }
+            else
+            {
+                start=mid+1;
+                ans=mid;
+            }
+
+            }
+            return (int)ans;
+
+        }
+        
+    }
